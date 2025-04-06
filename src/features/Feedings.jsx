@@ -9,10 +9,10 @@ export const Feedings = () => {
   useEffect(() => {
     const res = fetchFeedings();
 
-    if (!res.ok) {
-      throw new Error(`Error ocurred at using fetchFeedings`);
-    }
-
+    // if (!res.ok) {
+    //   throw new Error(`Error ocurred at using fetchFeedings`);
+    // }
+    console.log(`data fetched`, feedings);
     setFeedings(res);
   }, []);
 
