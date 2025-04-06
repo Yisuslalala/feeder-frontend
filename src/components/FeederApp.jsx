@@ -1,3 +1,5 @@
+import { Feedings } from "../features/Feedings";
+
 export const FeederApp = () => {
 
   return (
@@ -8,6 +10,8 @@ export const FeederApp = () => {
       <div className="d-flex justify-content-center feeder">
         <div>
           {/* here goes feeders component */}
+          <Feedings />
+
         </div>
       </div>
     </>
