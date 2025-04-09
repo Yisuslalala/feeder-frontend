@@ -25,8 +25,7 @@ export const Feedings = () => {
           key={feeding.id}
           feedAt={feeding.feed_at}
         />
-      ))
-      };
+      ))}
     </>
 
   );
