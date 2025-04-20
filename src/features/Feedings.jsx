@@ -7,14 +7,21 @@ export const Feedings = () => {
   const [feedings, setFeedings] = useState([]);
 
   useEffect(() => {
-    const res = fetchFeedings();
+    const getFeedings = async () => {
+      try {
+        const feeds = await fetchFeedings();
+        setFeedings(feeds);
+      } catch (e) {
+        throw new Error(`Error at getFeedings`, e);
+      }
+    };
 
-    // if (!res.ok) {
-    //   throw new Error(`Error ocurred at using fetchFeedings`);
-    // }
-    console.log(`data fetched`, feedings);
-    setFeedings(res);
+    getFeedings();
   }, []);
+
+  useEffect(() => {
+    console.log(`Data updated`, feedings);
+  }, [feedings]);
 
   return (
     <>
@@ -23,7 +30,7 @@ export const Feedings = () => {
       {feedings.map((feeding) => (
         <Feeding
           key={feeding.id}
-          feedAt={feeding.feed_at}
+          feedAt={feeding.feedAt}
         />
       ))}
     </>
