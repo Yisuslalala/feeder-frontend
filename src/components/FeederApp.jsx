@@ -1,4 +1,5 @@
-import { Feedings } from "../features/Feedings";
+// import { Feedings } from "../features/Feedings";
+import { Feedings } from "@/features/feedings";
 
 export const FeederApp = () => {
 
