@@ -2,6 +2,7 @@ import { useState, useEffect } from "react"
 import { Feeding } from "./Feeding";
 ///import { fetchFeedings } from "./fetchFeedings.jsx"
 import { fetchFeedings } from "@/features/feedings"
+import CreateFeeding from "./CreateFeeding";
 
 export const Feedings = () => {
 
@@ -27,6 +28,8 @@ export const Feedings = () => {
   return (
     <>
       <h3>Inside Feedings Component</h3>
+
+      <CreateFeeding />
 
       {feedings.map((feeding) => (
         <Feeding
