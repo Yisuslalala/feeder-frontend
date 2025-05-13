@@ -12,9 +12,11 @@ export const createFeeding = async (payload) => {
     body: JSON.stringify(payload),
   });
 
+  console.log(`Esto regresó?`, res);
+
   if (!res.ok) {
     throw new Error(`Failed to create feeding`);
   }
 
-  // return await res.json();
+  return await res.json();
 };
