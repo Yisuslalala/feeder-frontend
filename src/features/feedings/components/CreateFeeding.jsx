@@ -4,7 +4,12 @@ export const CreateFeeding = ({ onCreateFeeding }) => {
 
   const handleCreate = async () => {
     // try {
-    createFeeding({});
+    const feeding = await createFeeding();
+    console.log(`return value?`, feeding);
+
+    if (feeding && onCreateFeeding) {
+      onCreateFeeding(feeding);
+    }
     // onCreateFeeding?.(res);
     // console.log(res);
     // } catch (e) {

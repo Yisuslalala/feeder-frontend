@@ -29,7 +29,7 @@ export const Feedings = () => {
     <>
       <h3>Inside Feedings Component</h3>
 
-      <CreateFeeding />
+      <CreateFeeding onCreateFeeding={(newFeeding) => setFeedings(prev => [newFeeding, ...prev])} />
 
       {feedings.map((feeding) => (
         <Feeding
